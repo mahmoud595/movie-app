@@ -1,0 +1,15 @@
+.list {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: rgb(134 134 134 / 10%) 1px 1px 8px;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.list-item {
+  list-style: none;
+  padding: 5px;
+}
