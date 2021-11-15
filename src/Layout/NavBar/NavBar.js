@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import useAxios from "../../utils/helperFunctions/useAxios";
 import { SearchList } from "./SearchList/SearchList";
+
 const links = [
   { text: "Home", route: "/" },
   { text: "Favourites", route: "/favourites" },
@@ -33,7 +34,11 @@ export const NavBar = () => {
           onChange={searchHandler}
           className="search"
         />
-        {search ? <SearchList data={data.results} /> : <></>}
+        {search ? (
+          <SearchList data={data.results} loading={loading} error={error} />
+        ) : (
+          <></>
+        )}
       </div>
       <ul>
         {links.map(({ text, route }, i) => (

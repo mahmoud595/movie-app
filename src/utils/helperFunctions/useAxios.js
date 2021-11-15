@@ -4,6 +4,8 @@ import axios from "axios";
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 const api_key = process.env.REACT_APP_TMDB_API;
 
+//custom hook to handle the fetching of data from tmdb api
+
 const useAxios = ({ url, query, page }) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState("");

@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { NavBar } from "./Layout/NavBar/NavBar";
 import { Favourites } from "./Pages/Favourites/Favourites";

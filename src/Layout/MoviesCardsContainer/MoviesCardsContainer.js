@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import { MovieCard } from "./MovieCard/MovieCard";
 import "./MoviesCardsContainer.css";
 

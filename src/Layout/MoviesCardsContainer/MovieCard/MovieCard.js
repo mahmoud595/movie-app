@@ -21,6 +21,9 @@ export const MovieCard = ({ movie, setData }) => {
     }
   }, [exist]);
 
+  /*function to check for the route if it is home page then user can add movie to his favourites
+  or if it is favourite page then user can remove it */
+
   const favouritesHandler = async () => {
     let moviesArray;
     if (localStorage.getItem("favouriteMovies")) {

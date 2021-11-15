@@ -29,12 +29,9 @@ export const Home = () => {
   }, [response, currentPage]);
 
   const changePage = (type) => {
-    if (type === "back") {
-      currentPage !== 1 && setCurrentPage(currentPage - 1);
-    }
-    if (type === "forward") {
-      currentPage !== totalPages && setCurrentPage(currentPage + 1);
-    }
+    type === "back"
+      ? currentPage !== 1 && setCurrentPage(currentPage - 1)
+      : currentPage !== totalPages && setCurrentPage(currentPage + 1);
   };
   return (
     <div className="home">
@@ -45,9 +42,9 @@ export const Home = () => {
         setCurrentPage={setCurrentPage}
       />
       {loading ? (
-        <p>Loading...</p>
+        <h1 style={{ color: "#Fff", textAlign: "center" }}>Loading...</h1>
       ) : error ? (
-        <p>{error.message}</p>
+        <h1 style={{ color: "#Fff", textAlign: "center" }}>{error.message}</h1>
       ) : (
         <MoviesCardsContainer data={data.results} />
       )}

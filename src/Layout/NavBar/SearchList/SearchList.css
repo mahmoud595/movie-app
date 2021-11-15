@@ -14,4 +14,11 @@
 .list-item {
   list-style: none;
   padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.list-item > p {
+  margin-left: 6px;
+  font-weight: 600;
 }
