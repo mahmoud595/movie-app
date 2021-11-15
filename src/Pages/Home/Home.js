@@ -44,14 +44,26 @@ export const Home = () => {
         setSelectedLink={setSelectedLink}
         setCurrentPage={setCurrentPage}
       />
-      <MoviesCardsContainer data={data.results} />
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error.message}</p>
+      ) : (
+        <MoviesCardsContainer data={data.results} />
+      )}
+
       <div className="pagination-buttons">
-        <button disabled={currentPage === 1} onClick={() => changePage("back")}>
+        <button
+          disabled={currentPage === 1}
+          onClick={() => changePage("back")}
+          className="btn prevBtn"
+        >
           Previous Page
         </button>
         <button
           disabled={currentPage === totalPages}
           onClick={() => changePage("forward")}
+          className="btn nextBtn"
         >
           Next Page
         </button>

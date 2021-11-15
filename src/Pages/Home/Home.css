@@ -6,10 +6,27 @@
 .pagination-buttons {
   display: flex;
   justify-content: center;
-  margin: 40px;
+  margin: 40px 0 20px 0;
 }
 
 .pageNumber {
   color: #fff;
   text-align: center;
+}
+
+.btn {
+  border-radius: 20px;
+  border-width: 1px;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nextBtn {
+  background-color: green;
+  margin-left: 10px;
+}
+
+.prevBtn {
+  background-color: #dc143c;
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./NavBar.css";
 import useAxios from "../../utils/helperFunctions/useAxios";
@@ -15,6 +15,8 @@ export const NavBar = () => {
     url: `/search/movie`,
     query: search && search,
   });
+  const location = useLocation();
+
   const searchHandler = (e) => {
     setSearch(e.target.value);
   };
@@ -23,7 +25,6 @@ export const NavBar = () => {
       setData(response);
     }
   }, [response]);
-  console.log(data);
   return (
     <div className="navbar">
       <div className="search-container">
@@ -36,7 +37,14 @@ export const NavBar = () => {
       </div>
       <ul>
         {links.map(({ text, route }, i) => (
-          <Link to={route} key={i}>
+          <Link
+            to={route}
+            key={i}
+            className="links"
+            style={{
+              color: location.pathname === route ? "rgb(220, 248, 54)" : "#fff",
+            }}
+          >
             {text}
           </Link>
         ))}

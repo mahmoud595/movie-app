@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
-const api_key = "b7c9b3d18161404c70c5a4b53edb4386";
+const api_key = process.env.REACT_APP_TMDB_API;
 
 const useAxios = ({ url, query, page }) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState("");
   const [loading, setloading] = useState(true);
-  console.log(page);
   useEffect(() => {
     let unmounted = false;
     let source = axios.CancelToken.source();
